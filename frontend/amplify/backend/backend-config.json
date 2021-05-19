@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "matesdc81d20f": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
