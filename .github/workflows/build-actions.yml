@@ -1,0 +1,9 @@
+name: build-actions
+on: [push]
+jobs:
+  pre-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - run: npm install
+      - run: npm run lint
+      - run: npm run tsc
