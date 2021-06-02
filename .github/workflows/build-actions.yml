@@ -4,6 +4,11 @@ jobs:
   pre-merge:
     runs-on: ubuntu-latest
     steps:
-      - run: npm install
-      - run: npm run lint
-      - run: npm run tsc
+      - name: Checkout branch
+        uses: actions/checkout@v2
+      - name: frontend npm install
+        run: cd frontend && npm install
+      - name: frontend lint
+        run: cd frontend && npm run lint
+      - name: frontend tsc
+        run: cd frontend && npm run tsc
