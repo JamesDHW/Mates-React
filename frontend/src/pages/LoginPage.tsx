@@ -1,19 +1,19 @@
 import React, { FC, useState } from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import FormInput from '../components/FormInput'
-import FormButton from '../components/FormButton';
+import FormButton from '../components/FormButton/FormButton';
 import SocialButton from '../components/SocialButton';
 
 
 const LoginScreen: FC = () => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const [email, setEmail] = useState<string>();
+  const [password, setPassword] = useState<string>();
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={require("../../assets/friends.png")} />
       <FormInput
         labelValue={email}
-        onChangeText={(userEmail) => setEmail(userEmail)}
+        onChangeText={(userEmail :string) => setEmail(userEmail)}
         placeholderText="Email"
         iconType="user"
         keyboardType="email-address"
@@ -22,14 +22,14 @@ const LoginScreen: FC = () => {
       />
       <FormInput
         labelValue={password}
-        onChangeText={(userPassword) => setPassword(userPassword)}
+        onChangeText={(userPassword: string) => setPassword(userPassword)}
         placeholderText="Password"
         iconType="lock"
         secureTextEntry={true}
       />
       <FormButton
         buttonTitle="SIGN IN"
-        onPress={() => navigation.navigate("Home")}
+        onPress={() => null}
       />
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
