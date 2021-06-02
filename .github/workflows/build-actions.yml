@@ -6,9 +6,12 @@ jobs:
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
-      - name: Install deps
-        run: cd frontend && npm install
-      - name: Run lint
+      - name: frontend npm install
+        run: cd frontend
+        run: npm install
+      - name: frontend lint
+        run: cd frontend
         run: npm run lint
-      - name: run tcs
+      - name: frontend tsc
+        run: cd frontend
         run: npm run tsc
