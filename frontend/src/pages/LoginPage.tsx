@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
-import FormInput from "../components/FormInput";
-import FormButton from "../components/FormButton";
-import SocialButton from "../components/SocialButton";
+import React, { FC, useState } from 'react';
+import { View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
+import FormInput from '../components/FormInput'
+import FormButton from '../components/FormButton';
+import SocialButton from '../components/SocialButton';
 
-const LoginScreen = ({ navigation }) => {
+
+const LoginScreen: FC = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   return (
@@ -37,21 +38,18 @@ const LoginScreen = ({ navigation }) => {
 
       <Text style={styles.textRegister}> ────── OR ──────</Text>
 
-      <SocialButton
-        buttonTitle="SIGN IN USING GOOGLE"
-        btnType="google"
-        color="#de4d41"
-        backgroundColor="#f5e7ea"
-        onPress={() => {}}
-      />
-      <TouchableOpacity
-        style={styles.forgotButton}
-        onPress={() => navigation.navigate("Signup")}
-      >
-        <Text style={styles.navButtonText}>NEW TO MATES? JOIN HERE.</Text>
-      </TouchableOpacity>
-    </View>
-  );
+            <SocialButton 
+              buttonTitle="SIGN IN USING GOOGLE"
+              btnType="google"
+              color="#de4d41"
+              backgroundColor="#f5e7ea"
+              onPress={() => {}}
+            />
+            <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
+                <Text style={styles.navButtonText}>NEW TO MATES? JOIN HERE.</Text>
+            </TouchableOpacity>
+        </View>
+      );
 };
 
 export default LoginScreen;
