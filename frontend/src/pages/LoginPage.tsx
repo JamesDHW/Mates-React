@@ -1,9 +1,8 @@
-import React, { FC, useState } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
-import FormInput from '../components/FormInput'
-import FormButton from '../components/FormButton/FormButton';
-import SocialButton from '../components/SocialButton';
-
+import React, { FC, useState } from "react";
+import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
+import FormInput from "../components/FormInput";
+import FormButton from "../components/FormButton/FormButton";
+import SocialButton from "../components/SocialButton";
 
 const LoginScreen: FC = () => {
   const [email, setEmail] = useState<string>();
@@ -13,7 +12,7 @@ const LoginScreen: FC = () => {
       <Image style={styles.logo} source={require("../../assets/friends.png")} />
       <FormInput
         labelValue={email}
-        onChangeText={(userEmail :string) => setEmail(userEmail)}
+        onChangeText={(userEmail: string) => setEmail(userEmail)}
         placeholderText="Email"
         iconType="user"
         keyboardType="email-address"
@@ -27,10 +26,7 @@ const LoginScreen: FC = () => {
         iconType="lock"
         secureTextEntry={true}
       />
-      <FormButton
-        buttonTitle="SIGN IN"
-        onPress={() => null}
-      />
+      <FormButton buttonTitle="SIGN IN" onPress={() => null} />
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
         <Text style={styles.navButtonText}>FORGOT PASSWORD?</Text>
@@ -38,18 +34,18 @@ const LoginScreen: FC = () => {
 
       <Text style={styles.textRegister}> ────── OR ──────</Text>
 
-            <SocialButton 
-              buttonTitle="SIGN IN USING GOOGLE"
-              btnType="google"
-              color="#de4d41"
-              backgroundColor="#f5e7ea"
-              onPress={() => {}}
-            />
-            <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
-                <Text style={styles.navButtonText}>NEW TO MATES? JOIN HERE.</Text>
-            </TouchableOpacity>
-        </View>
-      );
+      <SocialButton
+        buttonTitle="SIGN IN USING GOOGLE"
+        btnType="google"
+        color="#de4d41"
+        backgroundColor="#f5e7ea"
+        onPress={() => {}}
+      />
+      <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
+        <Text style={styles.navButtonText}>NEW TO MATES? JOIN HERE.</Text>
+      </TouchableOpacity>
+    </View>
+  );
 };
 
 export default LoginScreen;
