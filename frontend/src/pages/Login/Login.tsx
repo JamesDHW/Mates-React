@@ -11,7 +11,7 @@ interface Props {}
 
 type loginNavProp = StackNavigationProp<RootStackParamList, 'Login'>
 
-const LoginScreen: FC<Props> = () => {
+export const Login: FC<Props> = () => {
   const { navigate } = useNavigation<loginNavProp>()
   const [email, setEmail] = useState<string>()
   const [password, setPassword] = useState<string>()
@@ -58,8 +58,6 @@ const LoginScreen: FC<Props> = () => {
     </View>
   )
 }
-
-export default LoginScreen
 
 const styles = StyleSheet.create({
   container: {

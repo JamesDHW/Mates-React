@@ -1,5 +1,5 @@
 import React from 'react'
-import Login from './src/pages/Login/Login'
+import { Login } from './src/pages/Login/Login'
 import { Registration } from './src/pages/Registration/Registration'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
