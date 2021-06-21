@@ -1,15 +1,26 @@
-import React, { FC, useState } from "react";
-import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
-import FormInput from "../../components/FormInput";
-import FormButton from "../../components/FormButton/FormButton";
-import SocialButton from "../../components/SocialButton";
+import React, { FC, useState } from 'react'
+import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
+import FormInput from '../../components/FormInput'
+import FormButton from '../../components/FormButton/FormButton'
+import { SocialButton } from '../../components/SocialButton'
+import { StackNavigationProp } from '@react-navigation/stack'
+import { RootStackParamList } from '../../../App'
+import { useNavigation } from '@react-navigation/native'
 
-const LoginScreen: FC = () => {
-  const [email, setEmail] = useState<string>();
-  const [password, setPassword] = useState<string>();
+interface Props {}
+
+type loginNavProp = StackNavigationProp<RootStackParamList, 'Login'>
+
+const LoginScreen: FC<Props> = () => {
+  const { navigate } = useNavigation<loginNavProp>()
+  const [email, setEmail] = useState<string>()
+  const [password, setPassword] = useState<string>()
   return (
     <View style={styles.container}>
-      <Image style={styles.logo} source={require("../../../assets/friends.png")} />
+      <Image
+        style={styles.logo}
+        source={require('../../../assets/friends.png')}
+      />
       <FormInput
         labelValue={email}
         onChangeText={(userEmail: string) => setEmail(userEmail)}
@@ -26,7 +37,7 @@ const LoginScreen: FC = () => {
         iconType="lock"
         secureTextEntry={true}
       />
-      <FormButton buttonTitle={"SIGN IN"} onPress={() => null} />
+      <FormButton buttonTitle={'SIGN IN'} onPress={() => null} />
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
         <Text style={styles.navButtonText}>FORGOT PASSWORD?</Text>
@@ -39,21 +50,21 @@ const LoginScreen: FC = () => {
         btnType="google"
         color="#de4d41"
         backgroundColor="#f5e7ea"
-        onPress={() => {}}
+        onPress={() => navigate('Register')}
       />
       <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
         <Text style={styles.navButtonText}>NEW TO MATES? JOIN HERE.</Text>
       </TouchableOpacity>
     </View>
-  );
-};
+  )
+}
 
-export default LoginScreen;
+export default LoginScreen
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 20,
     paddingTop: 50,
   },
@@ -61,19 +72,19 @@ const styles = StyleSheet.create({
     height: 200,
     width: 300,
     marginVertical: 20,
-    resizeMode: "cover",
+    resizeMode: 'cover',
   },
   text: {
     fontSize: 28,
     marginBottom: 10,
-    fontWeight: "500",
-    color: "#051d5f",
+    fontWeight: '500',
+    color: '#051d5f',
   },
   textRegister: {
     fontSize: 15,
     marginVertical: 10,
-    fontWeight: "500",
-    color: "#abb8c3",
+    fontWeight: '500',
+    color: '#abb8c3',
   },
   navButton: {
     marginTop: 15,
@@ -86,7 +97,7 @@ const styles = StyleSheet.create({
   },
   navButtonText: {
     fontSize: 18,
-    fontWeight: "500",
-    color: "#2e64e5",
+    fontWeight: '500',
+    color: '#2e64e5',
   },
-});
+})

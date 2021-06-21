@@ -1,19 +1,29 @@
 import React from 'react'
 import Login from './src/pages/Login/Login'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import { Registration } from './src/pages/Registration/Registration'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+
+const Stack = createStackNavigator()
+
+export type RootStackParamList = {
+  Login: undefined
+  Register: undefined
+}
 
 // import Amplify from "aws-amplify";
 // import awsconfig from "./aws-exports";
 // Amplify.configure(awsconfig);
 
-export default function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/register" component={Registration} />
-        <Route exact path="/login" component={Login} />
-      </Switch>
-    </BrowserRouter>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Registration} />
+      </Stack.Navigator>
+    </NavigationContainer>
   )
 }
+
+export default App
