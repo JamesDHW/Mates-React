@@ -1,39 +1,39 @@
-import styled from "styled-components";
-import { View, Text, Image, Button } from "react-native";
+import styled from 'styled-components'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 
 export const Container = styled(View)`
-  justify-content: "center";
-  align-items: "center";
+  justify-content: 'center';
+  align-items: 'center';
   padding: 20;
   padding-top: 50;
-`;
+`
 
 export const Logo = styled(Image)`
   height: 200;
   width: 300;
   margin-top: 20;
   margin-bottom: 20;
-  object-fit: "cover";
-`;
+  object-fit: 'cover';
+`
 
-export const TestRegister = styled(Text)`
+export const RegisterText = styled(Text)`
   font-size: 15;
   margin-top: 10;
   margin-bottom: 10;
   font-weight: 500;
-  color: "#abb8c3";
-`;
+  color: '#abb8c3';
+`
 
 export const NavButtonText = styled(Text)`
   font-size: 18;
   font-weight: 500;
-  color: "#2e64e5";
-`;
+  color: '#2e64e5';
+`
 
-export const NavButton = styled(Button)`
-  margin-top: 15
-`;
-
-export const ForgotButton = styled(Button)`
+export const NavButton = styled(TouchableOpacity)`
   margin-top: 15;
-`;
+`
+
+export const ForgotButton = styled(TouchableOpacity)`
+  margin-top: 15;
+`

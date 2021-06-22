@@ -1,11 +1,18 @@
 import React, { FC, useState } from 'react'
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native'
 import FormInput from '../../components/FormInput'
 import FormButton from '../../components/FormButton/FormButton'
 import { SocialButton } from '../../components/SocialButton'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { RootStackParamList } from '../../../App'
 import { useNavigation } from '@react-navigation/native'
+import {
+  Container,
+  ForgotButton,
+  Logo,
+  NavButton,
+  NavButtonText,
+  RegisterText
+} from './Login.style'
 
 interface Props {}
 
@@ -16,11 +23,8 @@ export const Login: FC<Props> = () => {
   const [email, setEmail] = useState<string>()
   const [password, setPassword] = useState<string>()
   return (
-    <View style={styles.container}>
-      <Image
-        style={styles.logo}
-        source={require('../../../assets/friends.png')}
-      />
+    <Container>
+      <Logo source={require('../../../assets/friends.png')} />
       <FormInput
         labelValue={email}
         onChangeText={(userEmail: string) => setEmail(userEmail)}
@@ -39,11 +43,11 @@ export const Login: FC<Props> = () => {
       />
       <FormButton buttonTitle={'SIGN IN'} onPress={() => null} />
 
-      <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
-        <Text style={styles.navButtonText}>FORGOT PASSWORD?</Text>
-      </TouchableOpacity>
+      <ForgotButton onPress={() => {}}>
+        <NavButtonText>FORGOT PASSWORD?</NavButtonText>
+      </ForgotButton>
 
-      <Text style={styles.textRegister}> ────── OR ──────</Text>
+      <RegisterText> ────── OR ──────</RegisterText>
 
       <SocialButton
         buttonTitle="SIGN IN USING GOOGLE"
@@ -52,50 +56,9 @@ export const Login: FC<Props> = () => {
         backgroundColor="#f5e7ea"
         onPress={() => navigate('Register')}
       />
-      <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
-        <Text style={styles.navButtonText}>NEW TO MATES? JOIN HERE.</Text>
-      </TouchableOpacity>
-    </View>
+      <NavButton onPress={() => {}}>
+        <NavButtonText>NEW TO MATES? JOIN HERE.</NavButtonText>
+      </NavButton>
+    </Container>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    paddingTop: 50,
-  },
-  logo: {
-    height: 200,
-    width: 300,
-    marginVertical: 20,
-    resizeMode: 'cover',
-  },
-  text: {
-    fontSize: 28,
-    marginBottom: 10,
-    fontWeight: '500',
-    color: '#051d5f',
-  },
-  textRegister: {
-    fontSize: 15,
-    marginVertical: 10,
-    fontWeight: '500',
-    color: '#abb8c3',
-  },
-  navButton: {
-    marginTop: 15,
-  },
-  forgotButton: {
-    marginVertical: 15,
-  },
-  newAccountButton: {
-    marginBottom: 36,
-  },
-  navButtonText: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: '#2e64e5',
-  },
-})
