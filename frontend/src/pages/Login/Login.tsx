@@ -49,13 +49,13 @@ export const Login: FC<Props> = () => {
 
       <RegisterText> ────── OR ──────</RegisterText>
 
-      <SocialButton
+      {/* <SocialButton
         buttonTitle="SIGN IN USING GOOGLE"
         btnType="google"
         color="#de4d41"
         backgroundColor="#f5e7ea"
         onPress={() => navigate('Register')}
-      />
+      /> */}
       <NavButton onPress={() => {}}>
         <NavButtonText>NEW TO MATES? JOIN HERE.</NavButtonText>
       </NavButton>

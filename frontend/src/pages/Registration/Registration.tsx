@@ -2,6 +2,12 @@ import React, { FC, useState } from 'react'
 import FormInput from '../../components/FormInput'
 import FormButton from '../../components/FormButton/FormButton'
 import { Container, Logo } from '../Login/Login.style'
+import {
+  NavButton,
+  NavButtonText,
+} from '../Login/Login.style'
+import { StyleSheet, Text, View, Button } from 'react-native';
+
 
 export const Registration: FC = () => {
   const [email, setEmail] = useState<string>()
@@ -44,6 +50,9 @@ export const Registration: FC = () => {
         autoCorrect={false}
       />
       <FormButton buttonTitle="Register" onPress={() => null} />
+      <Button title="Login" onPress={() => {() =>
+            this.props.navigation.navigate('Login')}}
+      />
     </Container>
   )
 }
