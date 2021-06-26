@@ -1,17 +1,19 @@
 import React, { FC } from 'react'
+import { TextInputProps } from 'react-native'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import { Icon, Input, InputContainer } from './FormInput.style'
 
 interface Props {
-  labelValue: string
+  labelValue: string | undefined
   placeholderText: string
   iconType: string
 }
 
-export const FormInput: FC<Props> = ({
+export const FormInput: FC<Props & TextInputProps> = ({
   labelValue,
   placeholderText,
-  iconType
+  iconType,
+  ...textInputProps
 }) => {
   return (
     <InputContainer>
@@ -23,6 +25,7 @@ export const FormInput: FC<Props> = ({
         numberOfLines={1}
         placeholder={placeholderText}
         placeholderTextColor="#666"
+        {...textInputProps}
       />
     </InputContainer>
   )
