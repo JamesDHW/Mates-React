@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react'
-import FormInput from '../../components/FormInput'
+import FormInput from '../../components/FormInput/FormInput'
 import FormButton from '../../components/FormButton/FormButton'
 import { Container, Logo } from '../Login/Login.style'
 import { Button } from 'react-native'
@@ -50,7 +50,7 @@ export const Registration: FC = () => {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <FormButton buttonTitle="Register" onPress={() => null} />
+      <FormButton buttonTitle="Register" />
       <Button title="Login" onPress={() => () => navigate('Login')} />
     </Container>
   )
