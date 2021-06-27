@@ -23,7 +23,7 @@ export const Login: FC<Props> = () => {
   const [password, setPassword] = useState<string>()
   return (
     <Container>
-      <Logo source={require('../../../assets/friends.png')} />
+      <Logo source={require('../../../assets/mates.png')} />
       <FormInput
         labelValue={email}
         onChangeText={(userEmail: string) => setEmail(userEmail)}

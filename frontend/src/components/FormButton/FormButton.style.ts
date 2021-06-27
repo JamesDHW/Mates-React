@@ -1,19 +1,19 @@
-import styled from 'styled-components'
-import { TouchableOpacity, Text } from 'react-native'
+import styled from 'styled-components/native'
 
-export const StyledTouchableOpacity = styled(TouchableOpacity)`
+export const StyledTouchableOpacity = styled.TouchableOpacity`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   margin-top: 10;
-  width: '100%';
+  width: 100%;
   height: 70;
-  background-color: '#2e64e5';
-  padding: 10;
-  align-items: 'center';
-  justify-content: 'center';
+  background-color: #2e64e5;
   border-radius: 3;
 `
 
-export const StyledText = styled(Text)`
+export const StyledText = styled.Text`
   font-size: 18;
-  font-weight: 'bold';
-  color: '#ffffff';
+  font-weight: 500;
+  color: #fff;
 `

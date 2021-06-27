@@ -20,8 +20,8 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Register" component={Registration} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Registration} />
       </Stack.Navigator>
     </NavigationContainer>
   )
