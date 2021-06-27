@@ -1,15 +1,16 @@
 import React, { FC, useState } from 'react'
-import FormInput from '../../components/FormInput'
+import FormInput from '../../components/FormInput/FormInput'
 import FormButton from '../../components/FormButton/FormButton'
 import { Container, Logo } from '../Login/Login.style'
-import {
-  NavButton,
-  NavButtonText,
-} from '../Login/Login.style'
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { Button } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { StackNavigationProp } from '@react-navigation/stack'
+import { RootStackParamList } from '../../../App'
 
+type registrationNavProp = StackNavigationProp<RootStackParamList, 'Register'>
 
 export const Registration: FC = () => {
+  const { navigate } = useNavigation<registrationNavProp>()
   const [email, setEmail] = useState<string>()
   const [password, setPassword] = useState<string>()
   return (
@@ -49,10 +50,8 @@ export const Registration: FC = () => {
         autoCapitalize="none"
         autoCorrect={false}
       />
-      <FormButton buttonTitle="Register" onPress={() => null} />
-      <Button title="Login" onPress={() => {() =>
-            this.props.navigation.navigate('Login')}}
-      />
+      <FormButton buttonTitle="Register" />
+      <Button title="Login" onPress={() => () => navigate('Login')} />
     </Container>
   )
 }

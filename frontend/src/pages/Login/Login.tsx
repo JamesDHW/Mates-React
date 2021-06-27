@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react'
-import FormInput from '../../components/FormInput'
+import FormInput from '../../components/FormInput/FormInput'
 import FormButton from '../../components/FormButton/FormButton'
-import { SocialButton } from '../../components/SocialButton'
 import { StackNavigationProp } from '@react-navigation/stack'
 import { RootStackParamList } from '../../../App'
 import { useNavigation } from '@react-navigation/native'
@@ -41,7 +40,7 @@ export const Login: FC<Props> = () => {
         iconType="lock"
         secureTextEntry={true}
       />
-      <FormButton buttonTitle={'SIGN IN'} onPress={() => null} />
+      <FormButton buttonTitle={'SIGN IN'} />
 
       <ForgotButton onPress={() => {}}>
         <NavButtonText>FORGOT PASSWORD?</NavButtonText>
@@ -49,14 +48,7 @@ export const Login: FC<Props> = () => {
 
       <RegisterText> ────── OR ──────</RegisterText>
 
-      {/* <SocialButton
-        buttonTitle="SIGN IN USING GOOGLE"
-        btnType="google"
-        color="#de4d41"
-        backgroundColor="#f5e7ea"
-        onPress={() => navigate('Register')}
-      /> */}
-      <NavButton onPress={() => {}}>
+      <NavButton onPress={() => navigate('Register')}>
         <NavButtonText>NEW TO MATES? JOIN HERE.</NavButtonText>
       </NavButton>
     </Container>
