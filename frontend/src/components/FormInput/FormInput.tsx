@@ -12,8 +12,7 @@ interface Props {
 export const FormInput: FC<Props & TextInputProps> = ({
   labelValue,
   placeholderText,
-  iconType,
-  ...textInputProps
+  iconType
 }) => {
   return (
     <InputContainer>
@@ -24,8 +23,6 @@ export const FormInput: FC<Props & TextInputProps> = ({
         value={labelValue}
         numberOfLines={1}
         placeholder={placeholderText}
-        placeholderTextColor="#666"
-        {...textInputProps}
       />
     </InputContainer>
   )
